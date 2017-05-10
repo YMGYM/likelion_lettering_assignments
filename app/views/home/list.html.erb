@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 class="lotte fsize60" style="text-align:center">다른 사람이 쓴 편지</h1>
+    <h3 class="youth fsize20" style="text-align:center">다른 사람이 쓴 편지를 참고해 보세요</h3>
+    <hr>
+    
+<div class="row">
+    <% @post.each do |p| %>
+        <div class="col s3">
+            <a href ="/show/<%=p.id %>">
+            <div class="card-panel red lighten-3">
+              <span class="white-text"><font class="youth"><%= p.myname %> 제자가 <br> <%= p.yourname %> 선생님께</font>
+              </span>
+            </div>
+            </a>
+        </div>
+        
+    
+    <% end %>
+
+</div>
+</div>

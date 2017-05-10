@@ -1,0 +1,178 @@
+<div class="container">
+    <h1 class="lotte fsize60">편지 수정하기</h1>
+    <h5 class="youth fsize2o">편지 내용을 수정해 보세요!</h5>
+    
+    <hr>
+    <form action="/update/<%= @post.id%>" method="POST">
+    <div class="red lighten-5" style ="width : auto height:auto">
+        <div class="mgn">
+        <div class="row">
+        <div class="input-field col s3" name="teachertitle">
+            <select name="teachertitle" value="<%= @post.greet%>">
+              <option value="<%=@post.teachertitle%>"><%=@post.teachertitle%></option>
+              <option value="존경하는">존경하는</option>
+              <option value="사랑하는">사랑하는</option>
+              <option value="멋있으신">멋있으신</option>
+              <option value="아름다우신">아름다우신</option>
+              <option value="영원한 스승이신">영원한 스승이신</option>
+              <option value="오늘날의 제가 있게 해주신">오늘날의 제가 있게 해주신</option>
+              <option value="제게 배움의 기쁨을 가르쳐 주신">제게 배움의 기쁨을 가르쳐 주신</option>
+              <option value="사랑으로 이끌어 주신">사랑으로 이끌어 주신</option>
+            </select>
+        </div>
+        <div class="input-field col s3">
+            <input id="yourname" name="yourname" type="text" class="validate" value="<%= @post.yourname%>">
+            <label for="yourname">선생님 이름</label>
+        </div>
+        <font class="youth fsize20 col s6">선생님께</font>
+        </div>
+
+        <div class="row">
+        <font class="youth fsize20 col s1">저</font>
+        <div class="input-field col s3">
+            <input id="myname" value="<%= @post.myname%>" name="myname" type="text" class="validate">
+            <label for="myname">자신의 이름</label>
+        </div>
+        <font class="youth fsize20 col s3">입니다</font>
+        </div>
+        
+        <div class="row">
+        <div class="input-field col s12">
+            <select name="greet" >
+              <option value="<%= @post.greet %>"><%= @post.greet %></option>
+              <option value="봄이 찾아온지도 엊그제 같은데 벌써 여름의 기운이 자라나는 듯 합니다">봄이 찾아온지도 엊그제 같은데 벌써 여름의 기운이 자라나는 듯 합니다</option>
+              <option value="코끝으로 스며드는 아카시아 꽃향기에 취해 이 계절을 보내고 싶지 않네요">코끝으로 스며드는 아카시아 꽃향기에 취해 이 계절을 보내고 싶지 않네요</option>
+              <option value="싱그러운 봄바람, 꿈결같이 아련한 벚꽃, 정말 눈부시게 아름다운 봄입니다">싱그러운 봄바람, 꿈결같이 아련한 벚꽃, 정말 눈부시게 아름다운 봄입니다</option>
+
+              
+            </select>
+        </div>            
+            <font class="youth fsize20 col s12">스승의 날을 맞아 이렇게 안부 편지를 쓰게 되었습니다</font>
+        </div>
+        
+        <div class="row">
+            <font class="youth fsize20 col s12">선생님께서는 그동안 잘 지내셨나요?</font>
+        </div>
+        <div class="row">
+            <font class="youth fsize20 col s2">전 요즈음</font>
+            <div class="input-field col s6">
+                <input id="whatdo" value="<%= @post.whatdo%>" name = "whatdo"type="text" class="validate">
+                <label for="whatdo">하고있는 것</label>
+            </div>
+            <font class="youth fsize20 col s3">하며 지내고 있습니다</font>
+        </div>        
+        <br>
+        <div class="row">
+        <!-- 과거에 어려웠던 일-->
+        <div class="input-field col s6">
+            <input id="pasthappen" value="<%= @post.pasthappen%>" name="pasthappen" type="text" class="validate">
+            <label for="pasthappen">과거에 어려웠던 일</label>
+        </div>
+        <font class="youth fsize20 col s6">때 선생님께서</font>
+        </div>
+        <div class="row">
+        <!-- 선생님의 조언-->
+        <div class="input-field col s6">
+            <input id="pastdo" value="<%= @post.pastdo%>" type="text" name="pastdo" class="validate">
+            <label for="pastdo">과거에 선생님의 조언</label>
+        </div>
+        
+        <font class="youth fsize20 col s6">주셨던 기억이 납니다</font>
+        </div>
+        <div class="row">
+        <font class="youth fsize20 col s3">그 때 이후로</font>
+        </div>
+        <div class="row">
+        <div class="input-field col s6">
+            <input id="nowhappen" value="<%= @post.nowchange%>" name="nowchange" type="text" class="validate">
+            <label for="nowhappen">노력한 점</label>
+        </div>
+        <font class="youth fsize20 col s6">하도록 노력해 와 결국</font>
+        </div>
+        <div class="row">
+        <!-- 바뀐점-->
+        <div class="input-field col s6">
+            <input id="nowdo" value="<%= @post.nowhappen%>" type="text" name="nowhappen" class="validate">
+            <label for="nowdo">바뀐 점</label>
+        </div>
+        <font class="youth fsize20 col s6">하게 되었습니다.</font>
+        </div>
+        <div class="row">
+        <br>
+        <font class="youth fsize20 col s12">모두 선생님 덕분입니다. 감사합니다.</font>
+        </div>
+        
+        <div clcass="row">
+              <div class="row">
+                    <div class="input-field col s12">
+                      <input id="textarea" value="<%= @post.addition %>" type="text" name="addition" class="validate">
+                      <label for="textarea">추가로 하고싶은말</label>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="row">
+            
+        <div class="input-field col s12">
+            <select name="finishword">
+              <option value="<%= @post.finishword %>"><%= @post.finishword %></option>
+              <option value="오늘날의 제가 있게 해 주심에 감사드립니다">오늘날의 제가 있게 해 주심에 감사드립니다</option>
+              <option value="선생님의 무한한 가르침과 헤아릴 수 없는 은혜에 감사드립니다">선생님의 무한한 가르침과 헤아릴 수 없는 은혜에 감사드립니다</option>
+              <option value="배움의 기쁨을 주셔서 감사드립니다">배움의 기쁨을 주셔서 감사드립니다</option>
+              <option value="선생님의 제자여서 행복합니다">선생님의 제자여서 행복합니다</option>
+              <option value="감사하다는 말로는 다 하지 못할 사랑을 되세기며 살아가겠습니다">감사하다는 말로는 다 하지 못할 사랑을 되세기며 살아가겠습니다</option>
+              <option value="비록 찾아뵙지는 못하지만, 항상 생각하고 있습니다. 선생님 건강하세요">비록 찾아뵙지는 못하지만, 항상 생각하고 있습니다. 선생님 건강하세요</option>
+              <option value="스승님은 제가 더 나은 삶을 누릴 수 있도록 영감을 주셨던 분이십니다. 저에겐 행운이었습니다. 앞으로도 더 많은 가르침 주시기 바랍니다. 사랑합니다">스승님은 제가 더 나은 삶을 누릴 수 있도록 영감을 주셨던 분이십니다. 저에겐 행운이었습니다. 앞으로도 더 많은 가르침 주시기 바랍니다. 사랑합니다</option>
+              <option value="선생님의 따뜻한 가르침과 관심에 오늘을 빌어 감사의 인사 전합니다. 항상 건강하시고 행복한 날만 보내시길 간절히 바랍니다.">선생님의 따뜻한 가르침과 관심에 오늘을 빌어 감사의 인사 전합니다. 항상 건강하시고 행복한 날만 보내시길 간절히 바랍니다.</option>
+              <option value="수많은 사람 중에 선생님과 제자로 만난 특별한 인연이라, 소중하고 감사한 마음이 더 느껴집니다. 앞으로도 행복한 나날 보내시길 바래요">수많은 사람 중에 선생님과 제자로 만난 특별한 인연이라, 소중하고 감사한 마음이 더 느껴집니다. 앞으로도 행복한 나날 보내시길 바래요</option>
+              
+            </select>
+        </div>         
+        </div>
+        <div class="row">
+        <!-- 제자 별칭-->
+        <div class="input-field col s12">
+            <select name="studenttitle">
+              <option value="<%= @post.studenttite %>"><%= @post.studenttite %></option>
+              <option value="귀여운 제자">귀여운 제자</option>
+              <option value="영원한 제자">영원한 제자</option>
+              <option value="선생님의 옛 제자">선생님의 옛 제자</option>
+              <option value="선생님의 은혜를 받은">선생님의 은혜를 받은</option>
+              <option value="선생님의 넘치는 사랑을 받은">선생님의 넘치는 사랑을 받은</option>
+              <option value="선생님께 감사드리는">선생님께 감사드리는</option>
+            </select>
+        </div>         
+        </div>
+        <div class="row">
+        <!-- 제자이름-->
+        <div class="input-field col s3">
+            <input id="myname" value="<%= @post.myname%>" name="myname" type="text" class="validate">
+            <label for="myname">나의 이름</label>
+        </div>        
+        <font class="youth fsize20 col s3">올림</font>
+        </div>
+        </div>
+        
+
+    </div>
+    
+    <div class="row">
+        <div class="input-field col s2 offset-s8">
+            <input id="check" value="<%= @post.pass%>" type="password" name="pass" class="validate">
+            <label for="check">삭제를 위한 비밀번호</label>
+        </div>
+        <button class="btn waves-effect red lighten-1 col s2" type="submit" name="action">수정
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+    </form>
+</div>
+
+
+
+<script>
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+            
+</script>

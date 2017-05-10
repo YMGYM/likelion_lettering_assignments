@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>편지쓰자!</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  
+  
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper red lighten-1">
+      <a href="/" class="brand-logo" style="padding-left:10px">편지쓰자!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/home/index">편지 쓰기</a></li>
+        <li><a href="/list">다른 사람이 쓴 편지</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>

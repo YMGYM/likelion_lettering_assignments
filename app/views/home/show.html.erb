@@ -1,0 +1,82 @@
+<div class="container">
+    <h1 class="lotte fsize60">편지 읽기</h1>
+    <h5 class="youth fsize2o">정성이 가득 담긴 편지를 읽어보세요!</h5>
+    
+    <hr>
+    <div class="red lighten-5" style ="width : auto height:auto">
+        <div class="mgn">
+        <div class="row">
+        <font class="youth fsize20 "> <%= @post.teachertitle %></font>
+        <font class="youth fsize20 "> <%= @post.yourname %></font>
+        <font class="youth fsize20 ">선생님께</font>
+        </div>
+
+        <div class="row">
+        <font class="youth fsize20">저</font>
+        <font class="youth fsize20"><%= @post.myname %></font>
+        <font class="youth fsize20">입니다</font>
+        </div>
+        
+        <div class="row">
+            <font class="youth fsize20"><%= @post.greet%></font>  
+            <font class="youth fsize20">스승의 날을 맞아 이렇게 안부 편지를 쓰게 되었습니다</font>
+        </div>
+        
+        <div class="row">
+            <font class="youth fsize20">선생님께서는 그동안 잘 지내셨나요?</font>
+        </div>
+        <div class="row">
+            <font class="youth fsize20">전 요즈음</font>
+            <font class="youth fsize20"><%= @post.whatdo%></font>
+            <font class="youth fsize20">하며 지내고 있습니다</font>
+        </div>        
+        <br>
+        <div class="row">
+        <!-- 과거에 어려웠던 일-->
+        <font class="youth fsize20"> <%= @post.pasthappen%></font>
+        <font class="youth fsize20">때 선생님께서</font>
+        <!-- 선생님의 조언-->
+        <font class="youth fsize20"><%= @post.pastdo%></font>
+        
+        <font class="youth fsize20">주셨던 기억이 납니다</font>
+        </div>
+        <div class="row">
+        <font class="youth fsize20">그 때 이후로</font>
+
+        <font class="youth fsize20"><%=@post.nowchange%></font>
+        <font class="youth fsize20">하도록 노력해 와 결국</font>
+        <!-- 바뀐점-->
+        <font class="youth fsize20"><%=@post.nowhappen%></font>
+        <font class="youth fsize20">하게 되었습니다.</font>
+        </div>
+        <div class="row">
+        <br>
+        <font class="youth fsize20">모두 선생님 덕분입니다. 감사합니다.</font>
+        </div>
+        
+        <div clcass="row">
+        <font class="youth fsize20"><%=@post.addition%></font>
+        </div>
+        
+        <div class="row">
+            
+        <font class="youth fsize20"><%=@post.finishword%></font>
+        </div>
+        <div class="row">
+        <!-- 제자 별칭-->
+        <font class="youth fsize20"><%=@post.studenttite%></font> 
+        </div>
+        <div class="row">
+        <!-- 제자이름-->
+        <font class="youth fsize20"><%=@post.myname%></font>   
+        <font class="youth fsize20">올림</font>
+        </div>
+        </div>
+        
+
+    </div>
+    
+
+<hr>
+<a class="waves-effect red lighten-1 btn" href="/editcheck/<%=@post.id%>"><i class="material-icons left">edit</i>수정하기</a>
+<a class="waves-effect red lighten-1 btn" href="/deletecheck/<%=@post.id%>"><i class="material-icons left">delete</i>삭제하기</a>
